@@ -49,7 +49,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">$18</p>
-                                <a href="checkout.html" class="btn btn-primary">Add to Cart</a>
+                                <a href="{{url('checkout')}}" class="btn btn-primary">Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">$18</p>
-                                <a href="checkout.html" class="btn btn-primary">Add to Cart</a>
+                                <a href="{{url('checkout')}}" class="btn btn-primary">Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">$18</p>
-                                <a href="checkout.html" class="btn btn-primary">Add to Cart</a>
+                                <a href="{{url('checkout')}}" class="btn btn-primary">Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">$18</p>
-                                <a href="checkout.html" class="btn btn-primary">Add to Cart</a>
+                                <a href="{{url('checkout')}}" class="btn btn-primary">Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">$18</p>
-                                <a href="checkout.html" class="btn btn-primary">Add to Cart</a>
+                                <a href="{{url('checkout')}}" class="btn btn-primary">Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">$18</p>
-                                <a href="checkout.html" class="btn btn-primary">Add to Cart</a>
+                                <a href="{{url('checkout')}}" class="btn btn-primary">Add to Cart</a>
                             </div>
                         </div>
                     </div>
