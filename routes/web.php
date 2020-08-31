@@ -49,7 +49,7 @@ Route::get('/editServices', function () {
     return view('editServices');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
