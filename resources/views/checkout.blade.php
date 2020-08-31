@@ -89,7 +89,7 @@
                                     <input type="text" class="form-control" id="email" aria-describedby="basic-addon2">
                                 </div>
                             </div>
-                            <div class="col-md-12"><a href="payment.html" class="btn btn-success" style="width: 100%;" role="button">Continue to Checkout </a></div>
+                            <div class="col-md-12"><a href="{{url('payment')}}" class="btn btn-success" style="width: 100%;" role="button">Continue to Checkout </a></div>
                         </form>
                     </div>
                 </div>
