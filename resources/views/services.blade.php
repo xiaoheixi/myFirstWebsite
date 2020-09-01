@@ -17,7 +17,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"> <a class="nav-link" href="home.html">Home</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="news.html">News</a> </li>
-                    <li class="nav-item"> <a class="nav-link" href="services.html">Services</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('services')}}">Services</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="shop.html">Shop</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Contact Us</a> </li>
                     <li class="nav-item"> <button class="nav-button btn btn-outline-primary" onclick="window.open('https://marketing4growth.com.au/')">Member Login</button> </li>

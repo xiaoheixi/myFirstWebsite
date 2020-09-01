@@ -22,7 +22,7 @@
         <<div class="sidenav">
             <a href="dashboard.html">Dashboard</a>
 			<a href="editHome.html">Home</a>
-            <a href="editNews.html">News</a>
+            <a href="{{url('editNews')}}">News</a>
             <a href="editServices.html">Services</a>
 			<a href="editNavigationBar.html">Navigation Bar</a>
 			<a href="editContactDetails.html">Contact Details</a>
