@@ -23,7 +23,7 @@
             <a href="dashboard.html">Dashboard</a>
 			<a href="editHome.html">Home</a>
             <a href="editNews.html">News</a>
-            <a href="editServices.html">Services</a>
+            <a href="[[url('editServices')]]">Services</a>
 			<a href="editNavigationBar.html">Navigation Bar</a>
 			<a href="editContactDetails.html">Contact Details</a>
             <a href="products.html">Products</a>
