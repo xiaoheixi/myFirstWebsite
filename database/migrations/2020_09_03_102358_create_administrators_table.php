@@ -17,6 +17,9 @@ class CreateAdministratorsTable extends Migration
             $table->id();
             $table->string('firstName');
             $table->string('lastName');
+            $table->string('email');
+            $table->string('username');
+            $table->string('password');
             $table->timestamps();
         });
     }
