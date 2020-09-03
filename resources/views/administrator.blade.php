@@ -20,7 +20,7 @@
             <h3><a href=""><strong>Marketing</strong> 4 <strong>Growth</strong></a></h3>
         </div>
         <<div class="sidenav">
-            <a href="dashboard.html">Dashboard</a>
+            <a href="{{url('dashboard')}}">Dashboard</a>
 			<a href="editHome.html">Home</a>
             <a href="editNews.html">News</a>
             <a href="editServices.html">Services</a>
