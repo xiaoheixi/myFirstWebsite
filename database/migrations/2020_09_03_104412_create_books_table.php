@@ -16,12 +16,9 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer ID();
-            $table->string Name();
-            $table->string Image();
-            $table->double Price();
         });
     }
+
     /**
      * Reverse the migrations.
      *
