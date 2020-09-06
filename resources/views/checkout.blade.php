@@ -69,28 +69,26 @@
             <div class="col-lg-5 col-12">
                 <div class="row mx-0">
                     <div class="col-12 card bg-light mx-auto">
-                        <h3 class="text-center card-header">Billing Address</h3>
-                        <form class="card-body row">
-                            <div class="form-group  col-md-6">
-                                <label for="fname" class="col-form-label">First name</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="fname" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="lname" class="col-form-label">Last name</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="lname" aria-describedby="basic-addon2">
-                                </div>
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="email" class="col-form-label">Email</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="email" aria-describedby="basic-addon2">
-                                </div>
-                            </div>
-                            <div class="col-md-12"><a href="{{url('payment')}}" class="btn btn-success" style="width: 100%;" role="button">Continue to Checkout </a></div>
-                        </form>
+                    <form class="w3-container w3-display-middle w3-card-4 " method="POST" id="payment-form"  action="/payment/add-funds/paypal">
+  {{ csrf_field() }}
+  <h2 class="w3-text-blue">Payment Form</h2>
+  <p>
+  <label class="w3-text-blue"><b>Enter First Name</b></label>
+  <input class="w3-input w3-border" name="firstName" type="text">
+  </p>
+  <p>
+  <label class="w3-text-blue"><b>Enter Last Name</b></label>
+  <input class="w3-input w3-border" name="lastName" type="text">
+  </p>
+  <p>
+  <label class="w3-text-blue"><b>Enter Email</b></label>
+  <input class="w3-input w3-border" name="email" type="text">      
+  </p>
+  <p>
+  <label class="w3-text-blue"><b>Enter Amount</b></label>
+  <input class="w3-input w3-border" name="amount" type="text"></p>      
+  <button class="w3-btn w3-blue">Pay with PayPal</button></p>
+</form>
                     </div>
                 </div>
             </div>
