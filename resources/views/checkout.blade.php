@@ -74,8 +74,17 @@
   <h2 class="w3-text-blue">Payment Form</h2>
   <p>
   <label class="w3-text-blue"><b>Enter First Name</b></label>
+  <input class="w3-input w3-border" name="firstName" type="text">
+  </p>
+  <p>
   <label class="w3-text-blue"><b>Enter Last Name</b></label>
-  <label class="w3-text-blue"><b>Enter Email</b></label>      
+  <input class="w3-input w3-border" name="lastName" type="text">
+  </p>
+  <p>
+  <label class="w3-text-blue"><b>Enter Email</b></label>
+  <input class="w3-input w3-border" name="email" type="text">      
+  </p>
+  <p>
   <label class="w3-text-blue"><b>Enter Amount</b></label>
   <input class="w3-input w3-border" name="amount" type="text"></p>      
   <button class="w3-btn w3-blue">Pay with PayPal</button></p>
