@@ -69,8 +69,7 @@
             <div class="col-lg-5 col-12">
                 <div class="row mx-0">
                     <div class="col-12 card bg-light mx-auto">
-                    <form class="w3-container w3-display-middle w3-card-4 " method="POST" id="payment-form"  action="/payment/add-funds/paypal">
-  {{ csrf_field() }}
+                    <form class="w3-container w3-display-middle w3-card-4 " method="POST" id="payment-form"  action="{!! URL::to('paypal') !!">
   <h2 class="w3-text-blue">Payment Form</h2>
   <p>
   <label class="w3-text-blue"><b>Enter First Name</b></label>
