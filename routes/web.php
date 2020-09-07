@@ -81,4 +81,4 @@ Route::get('/thanks', function () {
     return view('thanks');
 });
 
-Route::post('paypal', 'PaymentController@payWithpaypal');
+Route::post('paypal', 'PaymentController@payWithPayPal');

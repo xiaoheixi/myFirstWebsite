@@ -25,59 +25,59 @@ class PaymentController extends Controller
                 );
                 $this->_api_context->setConfig($paypal_conf['settings']);
         }
-        public function payWithpaypal(Request $request)
-    {
-$payer = new Payer();
-        $payer->setPaymentMethod('paypal');
-$item_1 = new Item();
-/*Item 1 is the item name*/
-$item_1->setName('Item 1')
-            ->setCurrency('AUD')
-            ->setQuantity(1)
-            /*Amount is the price*/
-            ->setPrice($request->get('amount'));
-$item_list = new ItemList();
-        $item_list->setItems(array($item_1));
-$amount = new Amount();
-        $amount->setCurrency('AUD')
-            ->setTotal($request->get('amount'));
-$transaction = new Transaction();
-        $transaction->setAmount($amount)
-            ->setItemList($item_list)
-            ->setDescription('Thank you for your purchase, you will be redirected.');
-$redirect_urls = new RedirectUrls();
-/*Redirects the user to thanks.blade.php.*/
-        $redirect_urls->setReturnUrl(URL::route("{{url('thanks')}}"))
-            ->setCancelUrl(URL::route("{{url('checkout')}}"));
-$payment = new Payment();
-        $payment->setIntent('Sale')
-            ->setPayer($payer)
-            ->setRedirectUrls($redirect_urls)
-            ->setTransactions(array($transaction));
-        try {
-$payment->create($this->_api_context);
-} catch (\PayPal\Exception\PPConnectionException $ex) {
-if (\Config::get('app.debug')) {
-\Session::put('error', 'Connection timeout');
+        public function payWithPayPal(Request $request)
+        {
+                $payer = new Payer();
+                $payer->setPaymentMethod('paypal');
+                $item_1 = new Item();
+                /*Item 1 is the item name*/
+                $item_1->setName('Item 1')
+                ->setCurrency('AUD')
+                ->setQuantity(1)
+                 /*Amount is the price*/
+                ->setPrice($request->get('amount'));
+                $item_list = new ItemList();
+                $item_list->setItems(array($item_1));
+                $amount = new Amount();
+                $amount->setCurrency('AUD')
+                ->setTotal($request->get('amount'));
+                $transaction = new Transaction();
+                $transaction->setAmount($amount)
+                ->setItemList($item_list)
+                ->setDescription('Thank you for your purchase, you will be redirected.');
+                $redirect_urls = new RedirectUrls();
+                /*Redirects the user to thanks.blade.php.*/
+                 $redirect_urls->setReturnUrl(URL::route("{{url('thanks')}}"))
+                ->setCancelUrl(URL::route("{{url('checkout')}}"));
+                $payment = new Payment();
+                $payment->setIntent('Sale')
+                ->setPayer($payer)
+                ->setRedirectUrls($redirect_urls)
+                ->setTransactions(array($transaction));
+                try {
+                        $payment->create($this->_api_context);
+                } catch (\PayPal\Exception\PPConnectionException $ex) {
+                        if (\Config::get('app.debug')) {
+                                \Session::put('error', 'Connection timeout');
+                                return Redirect::route('paywithpaypal');
+                        } else {
+                                \Session::put('error', 'Some error occur, sorry for inconvenient');
+                                return Redirect::route('paywithpaypal');
+                        }
+                }
+                foreach ($payment->getLinks() as $link) {
+                        if ($link->getRel() == 'approval_url') {
+                                $redirect_url = $link->getHref();
+                                break;
+                        }
+                }
+                /** add payment ID to session **/
+                Session::put('paypal_payment_id', $payment->getId());
+                if (isset($redirect_url)) {
+                        /** redirect to paypal **/
+                        return Redirect::away($redirect_url);
+                }
+                \Session::put('error', 'Unknown error occurred');
                 return Redirect::route('paywithpaypal');
-} else {
-\Session::put('error', 'Some error occur, sorry for inconvenient');
-                return Redirect::route('paywithpaypal');
-}
-}
-foreach ($payment->getLinks() as $link) {
-if ($link->getRel() == 'approval_url') {
-$redirect_url = $link->getHref();
-                break;
-}
-}
-/** add payment ID to session **/
-        Session::put('paypal_payment_id', $payment->getId());
-if (isset($redirect_url)) {
-/** redirect to paypal **/
-            return Redirect::away($redirect_url);
-}
-\Session::put('error', 'Unknown error occurred');
-        return Redirect::route('paywithpaypal');
-}
+        }
 }
