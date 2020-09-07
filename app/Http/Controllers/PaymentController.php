@@ -34,7 +34,7 @@ class PaymentController extends Controller
                 $item_1->setName('Item 1')
                 ->setCurrency('AUD')
                 ->setQuantity(1)
-                 /*Amount is the price*/
+                /*Amount is the price*/
                 ->setPrice($request->get('amount'));
                 $item_list = new ItemList();
                 $item_list->setItems(array($item_1));
@@ -79,5 +79,25 @@ class PaymentController extends Controller
                 }
                 \Session::put('error', 'Unknown error occurred');
                 return Redirect::route('paywithpaypal');
+        }
+        public function getPaymentStatus()
+        {
+                $payment_id = Session::get('paypal_payment_id');
+                Session::forget('paypal_payment_id');
+                if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
+                        \Session::put('error', 'Payment failed');
+                        return Redirect::to('/');
+                }
+                $payment = Payment::get($payment_id, $this->_api_context);
+                $execution = new PaymentExecution();
+                $execution->setPayerId(Input::get('PayerID'));
+                /*Executes the payment!*/
+                $result = $payment->execute($execution, $this->_api_context);
+                if ($result->getState() == 'approved') {
+                        \Session::put('success', 'Payment success');
+                        return Redirect::to('/');
+                }
+                \Session::put('error', 'Payment failed');
+                return Redirect::to('/');
         }
 }
