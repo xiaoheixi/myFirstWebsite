@@ -86,7 +86,7 @@
                             </div>
                     <?php Session::forget('error');?>
                     @endif
-                    <form class="w3-container w3-display-middle w3-card-4 " method="POST" id="payment-form"  action="{!! URL::to('paypal') !!">
+                    <form class="w3-container w3-display-middle w3-card-4 " method="POST" id="payment-form"  action="{!! URL::to('paypal') !!}">
   <h2 class="w3-text-blue">Payment Form</h2>
   <p>
   <label class="w3-text-blue"><b>Enter First Name</b></label>
