@@ -80,4 +80,3 @@ Route::get('/shop', function () {
 Route::get('/thanks', function () {
     return view('thanks');
 });
-
