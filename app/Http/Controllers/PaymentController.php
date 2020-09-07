@@ -47,8 +47,8 @@ class PaymentController extends Controller
                 ->setDescription('Thank you for your purchase, you will be redirected.');
                 $redirect_urls = new RedirectUrls();
                 /*Redirects the user to thanks.blade.php.*/
-                 $redirect_urls->setReturnUrl(URL::route("{{url('thanks')}}"))
-                ->setCancelUrl(URL::route("{{url('checkout')}}"));
+                $redirect_urls->setReturnUrl(URL::route('status'))
+                ->setCancelUrl(URL::route('status'));
                 $payment = new Payment();
                 $payment->setIntent('Sale')
                 ->setPayer($payer)
