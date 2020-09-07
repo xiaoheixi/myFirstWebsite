@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PayPal\Api\Amount;
+use PayPal\Api\Details;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
+use PayPal\Api\Payer;
+use PayPal\Api\Payment;
+use PayPal\Api\RedirectUrls;
+use Paypal\Api\Transaction;
 
 class PaymentController extends Controller
 {
@@ -21,28 +29,30 @@ public function payWithpaypal(Request $request)
 $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 $item_1 = new Item();
-$item_1->setName('Item 1') /** item name **/
-            ->setCurrency('USD')
+/*Item 1 is the item name*/
+$item_1->setName('Item 1')
+            ->setCurrency('AUD')
             ->setQuantity(1)
-            ->setPrice($request->get('amount')); /** unit price **/
+            /*Amount is the price*/
+            ->setPrice($request->get('amount'));
 $item_list = new ItemList();
         $item_list->setItems(array($item_1));
 $amount = new Amount();
-        $amount->setCurrency('USD')
+        $amount->setCurrency('AUD')
             ->setTotal($request->get('amount'));
 $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($item_list)
-            ->setDescription('Your transaction description');
+            ->setDescription('Thank you for your purchase, you will be redirected.');
 $redirect_urls = new RedirectUrls();
-        $redirect_urls->setReturnUrl(URL::route('status')) /** Specify return URL **/
-            ->setCancelUrl(URL::route('status'));
+/*Redirects the user to thanks.blade.php.*/
+        $redirect_urls->setReturnUrl(URL::route("{{url('thanks')}}"))
+            ->setCancelUrl(URL::route("{{url('checkout')}}"));
 $payment = new Payment();
         $payment->setIntent('Sale')
             ->setPayer($payer)
             ->setRedirectUrls($redirect_urls)
             ->setTransactions(array($transaction));
-        /** dd($payment->create($this->_api_context));exit; **/
         try {
 $payment->create($this->_api_context);
 } catch (\PayPal\Exception\PPConnectionException $ex) {
