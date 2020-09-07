@@ -80,3 +80,6 @@ Route::get('/shop', function () {
 Route::get('/thanks', function () {
     return view('thanks');
 });
+
+Route::post('paypal', 'PaymentController@payWithPayPal');
+Route::get('status', 'PaymentController@getPaymentStatus');
