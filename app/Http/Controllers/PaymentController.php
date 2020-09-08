@@ -59,10 +59,10 @@ class PaymentController extends Controller
                 } catch (\PayPal\Exception\PPConnectionException $ex) {
                         if (\Config::get('app.debug')) {
                                 \Session::put('error', 'Connection timeout');
-                                return Redirect::route('paywithpaypal');
+                                return Redirect::route('payWithPayPal');
                         } else {
                                 \Session::put('error', 'Some error occur, sorry for inconvenient');
-                                return Redirect::route('paywithpaypal');
+                                return Redirect::route('payWithPayPal');
                         }
                 }
                 foreach ($payment->getLinks() as $link) {
@@ -78,7 +78,7 @@ class PaymentController extends Controller
                         return Redirect::away($redirect_url);
                 }
                 \Session::put('error', 'Unknown error occurred');
-                return Redirect::route('paywithpaypal');
+                return Redirect::route('payWithPayPal');
         }
         public function getPaymentStatus()
         {
