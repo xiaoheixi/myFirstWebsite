@@ -23,7 +23,7 @@
         </div>
         @endif
 
-        <form method="post" action="{{url('Pages')}}">
+        <form method="post" action="{{url('page')}}">
             {{csrf_field()}}
             <div class="form-group">
                 <input type="text" name="title" class="form-control" placeholder="Enter page title" />
