@@ -1,6 +1,6 @@
 @extends('pageManagement')
 <!-- Content being displayed!-->
-@section('pageManagement')
+@section('content')
 <div class="row">
     <div class="col-md-12">
         <br />
