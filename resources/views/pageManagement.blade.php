@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="container">
+<!-- Allows displaying content!-->
     @yield('content')
 </div>
 </body>
