@@ -23,7 +23,8 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        //This will load create.blade.php
+        return view('page.create');
     }
 
     /**
