@@ -44,7 +44,7 @@ class PageController extends Controller
             'backgroundColour'  =>  'required',
             'font'              =>  'required',
         ]);
-        $student = new Student([
+        $page = new Page([
             'title'             =>    $request->get('title'),
             'link'              =>    $request->get('link'),
             'textSize'          =>    $request->get('textSize'),
@@ -52,7 +52,7 @@ class PageController extends Controller
             'backgroundColour'  =>    $request->get('backgroundColour'),
             'font'              =>    $request->get('font'),
         ]);
-        $student->save();
+        $page->save();
         return redirect()->route('page.create')->with('success', 'Page Added');
     }
 
