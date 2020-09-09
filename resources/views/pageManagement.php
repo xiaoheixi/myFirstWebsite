@@ -44,11 +44,10 @@
                         </div>
 						<br><br>
 
-
                         <form action="" method="post">
                             <div class="modal-body">
                                 <div class="input-container">
-                                    <input class="input-field" type="text" placeholder="Name" name="name">
+                                    <input class="input-field" type="text" placeholder="Title" name="title">
                                 </div>
                                 <div class="input-container">
                                     <input class="input-field" type="text" placeholder="Link" name="link">
@@ -61,13 +60,10 @@
                                 </div>	
 								<div class="input-container">
                                     <input class="input-field" type="text" placeholder="Background Colour" name="backgroundColour">
-                                </div>	
-								<div class="input-container">
-                                    <input class="input-field" type="text" placeholder="Font" name="font">
                                 </div>
 								<div class="input-container">
-                                    <input class="input-field" type="text" placeholder="Title" name="title">
-                                </div>									
+                                    <input class="input-field" type="text" placeholder="Font" name="font">
+                                </div>								
                             </div></br></br>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success">Save Changes</button>
