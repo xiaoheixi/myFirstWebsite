@@ -87,3 +87,6 @@ Route::get('/pageManagement', function () {
 
 Route::post('paypal', 'PaymentController@payWithPayPal');
 Route::get('status', 'PaymentController@getPaymentStatus');
+
+//Single route declaration for multiple routes to page.
+Route::resource('page', 'PageController');
