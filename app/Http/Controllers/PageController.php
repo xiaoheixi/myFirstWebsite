@@ -14,7 +14,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $pages = Page::all()->toArray();
+        return view('page.index', compact('pages'));
     }
 
     /**
@@ -48,9 +49,9 @@ class PageController extends Controller
         return redirect()->route('page.create')->with('success', 'Page Added');
     }
 
-    public function page($URI) {
-        $URI = Page::URI;
-        return view('page.$URI', '$URI');
+    public function page() {
+        //$pages = Page::all()->toArray();
+        return view('page.dynamicPage');
     }
     /**
      * Display the specified resource.

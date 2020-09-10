@@ -92,8 +92,3 @@ Route::get('status', 'PaymentController@getPaymentStatus');
 Route::resource('page', 'PageController');
 
 //Route::get('/page.$URI', 'PageController@page($URI)');
-
-
-Route::get('/page.$URI', function () {
-    return view('page.$URI');
-});
