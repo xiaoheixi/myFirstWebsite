@@ -91,4 +91,4 @@ Route::get('status', 'PaymentController@getPaymentStatus');
 //Single route declaration for multiple routes to page.
 Route::resource('page', 'PageController');
 
-Route::get('page/{URI}', 'PageController@page');
+Route::get('page.$URI', 'PageController@page');

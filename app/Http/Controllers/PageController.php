@@ -49,8 +49,8 @@ class PageController extends Controller
     }
 
     public function page($URI) {
-        $URI = Page::all()->toArray();
-        return view('page.$URI', compact('$URI'));
+        $URI = Page::URI;
+        return view('page.$URI', '$URI');
     }
     /**
      * Display the specified resource.
