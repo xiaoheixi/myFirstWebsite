@@ -6,6 +6,14 @@
         <br />
         <h3 align="center">Page Data</h3>
         <br />
+        @if($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{$message}}</p>
+        </div>
+        @endif
+        <div align="right">
+            <a href="{{route('page.create')}}" class="btn btn-primary">Add</a>
+        </div>
         <table class="table table-bordered">
             <tr>
                 <th>Title</th>

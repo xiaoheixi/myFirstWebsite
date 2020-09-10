@@ -46,12 +46,12 @@ class PageController extends Controller
             'URI'              =>    $request->get('URI'),
         ]);
         $page->save();
-        return redirect()->route('page.create')->with('success', 'Page Added');
+        return redirect()->route('page.index')->with('success', 'Page Added');
     }
 
     public function page() {
-        //$pages = Page::all()->toArray();
-        return view('page.dynamicPage');
+        $pages = DB::table('Page')->select('title', ')->get();
+        return view('page.dynamicPage',)
     }
     /**
      * Display the specified resource.
