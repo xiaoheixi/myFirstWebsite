@@ -37,7 +37,7 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title'             =>  'required',
+            'title'            =>  'required',
             'URI'              =>  'required',
         ]);
         $page = new Page([
@@ -49,8 +49,8 @@ class PageController extends Controller
     }
 
     public function page($URI) {
-        $URI = Page::URI();
-        return view('page.$URI', '')
+        $URI = Page::all()->toArray();
+        return view('page.$URI', compact('$URI'));
     }
     /**
      * Display the specified resource.

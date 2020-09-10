@@ -29,7 +29,7 @@
                 <input type="text" name="title" class="form-control" placeholder="Enter page title" />
             </div>
             <div class="form-group">
-                <input type="text" name="link" class="form-control" placeholder="Enter page URI" />
+                <input type="text" name="URI" class="form-control" placeholder="Enter page URI" />
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" />
