@@ -41,13 +41,17 @@ class PageController extends Controller
             'URI'              =>  'required',
         ]);
         $page = new Page([
-            'title'             =>    $request->get('title'),
+            'title'            =>    $request->get('title'),
             'URI'              =>    $request->get('URI'),
         ]);
         $page->save();
         return redirect()->route('page.create')->with('success', 'Page Added');
     }
 
+    public function page($URI) {
+        $URI = Page::URI();
+        return view('page.$URI', '')
+    }
     /**
      * Display the specified resource.
      *
