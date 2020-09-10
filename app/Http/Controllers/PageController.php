@@ -38,19 +38,11 @@ class PageController extends Controller
     {
         $this->validate($request, [
             'title'             =>  'required',
-            'link'              =>  'required',
-            'textSize'          =>  'required',
-            'textColour'        =>  'required',
-            'backgroundColour'  =>  'required',
-            'font'              =>  'required',
+            'URI'              =>  'required',
         ]);
         $page = new Page([
             'title'             =>    $request->get('title'),
-            'link'              =>    $request->get('link'),
-            'textSize'          =>    $request->get('textSize'),
-            'textColour'        =>    $request->get('textColour'),
-            'backgroundColour'  =>    $request->get('backgroundColour'),
-            'font'              =>    $request->get('font'),
+            'URI'              =>    $request->get('URI'),
         ]);
         $page->save();
         return redirect()->route('page.create')->with('success', 'Page Added');

@@ -29,19 +29,7 @@
                 <input type="text" name="title" class="form-control" placeholder="Enter page title" />
             </div>
             <div class="form-group">
-                <input type="text" name="link" class="form-control" placeholder="Enter page link" />
-            </div>
-            <div class="form-group">
-                <input type="number" name="textSize" class="form-control" placeholder="Enter text size" />
-            </div>
-            <div class="form-group">
-                <input type="text" name="textColour" class="form-control" placeholder="Enter text colour" />
-            </div>
-            <div class="form-group">
-                <input type="text" name="backgroundColour" class="form-control" placeholder="Enter background colour" />
-            </div>
-            <div class="form-group">
-                <input type="text" name="font" class="form-control" placeholder="Enter font" />
+                <input type="text" name="link" class="form-control" placeholder="Enter page URI" />
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" />
