@@ -32,6 +32,9 @@
                 <input type="text" name="URI" class="form-control" placeholder="Enter page URI" />
             </div>
             <div class="form-group">
+                <input type="text" name="pageContent" class="form-control" placeholder="Enter page content" />
+            </div>
+            <div class="form-group">
                 <input type="submit" class="btn btn-primary" />
             </div>
         </form>
