@@ -17,7 +17,7 @@ class PageController extends Controller
         $pages = Page::all()->toArray();
         return view('page.index', compact('pages'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
