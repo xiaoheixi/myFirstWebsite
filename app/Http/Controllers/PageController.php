@@ -40,19 +40,17 @@ class PageController extends Controller
         $this->validate($request, [
             'title'            =>  'required',
             'URI'              =>  'required',
+            'pageContent'      =>  'required',
         ]);
         $page = new Page([
             'title'            =>    $request->get('title'),
             'URI'              =>    $request->get('URI'),
+            'pageContent'      =>    $request->get('pageContent'),
         ]);
         $page->save();
         return redirect()->route('page.index')->with('success', 'Page Added');
     }
 
-    public function page() {
-        $pages = DB::table('Page')->select('title', ')->get();
-        return view('page.dynamicPage',)
-    }
     /**
      * Display the specified resource.
      *
