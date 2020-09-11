@@ -18,6 +18,12 @@ class PageController extends Controller
         return view('page.index', compact('pages'));
     }
 
+    public function page()
+    {
+        $pages = Page::all()->toArray();
+        return view('page.dynamicPage', compact('pages'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
