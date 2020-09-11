@@ -94,16 +94,10 @@ Route::resource('page', 'PageController');
 
 Route::get('page/{URI}', function($URI) {
     $pageContent = DB::tables('Page')->where('URI',$URI);
-    return view('testPage', ['pageContent' => $pageContent]);
-});
-
-Route::get('/test', function() {
-    return view('page.test');
+    return view('page.dynamicPage', ['pageContent' => $pageContent]);
 });
 
 Route::get('/{URI}', function($URI) {
     $pageContent = DB::tables('Page')->where('URI',$URI);
-    return view('testPage', ['pageContent' => $pageContent]);
+    return view('page.dynamicPage', ['pageContent' => $pageContent]);
 });
-
-Route::get('view-pages','PageViewController@index');
