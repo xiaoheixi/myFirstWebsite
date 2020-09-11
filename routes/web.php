@@ -91,4 +91,7 @@ Route::get('status', 'PaymentController@getPaymentStatus');
 //Single route declaration for multiple routes to page.
 Route::resource('page', 'PageController');
 
-//Route::get('/page.$URI', 'PageController@page($URI)');
+Route::get('page/{URI}', function($URI) {
+    $pageContent = DB::tables('Page')->where('URI',$URI);
+    return view('page.dynamicPage', ['pageContent' => $pageContent]);
+});
